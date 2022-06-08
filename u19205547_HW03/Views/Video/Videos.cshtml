@@ -1,0 +1,26 @@
+﻿@model IEnumerable<u19205547_HW03.Models.FileModel>
+
+@{
+    ViewBag.Title = "Videos";
+}
+
+<h2>Videos</h2>
+<h4></h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var vid in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => vid.FileName)
+        </td>
+    </tr>
+}
+
+</table>

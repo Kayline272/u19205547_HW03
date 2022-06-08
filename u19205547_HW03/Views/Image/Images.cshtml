@@ -1,0 +1,34 @@
+﻿@model IEnumerable<u19205547_HW03.Models.FileModel>
+
+@{
+    ViewBag.Title = "Images";
+}
+
+<h2>Images</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var img in Model) {
+    <tr>
+        <td>
+           <img src="~/App_Data/Media/Images/"/>
+            @Html.DisplayFor(modelItem => img.FileName)
+            <button class="btn btn-success">
+                @Html.ActionLink("DOWNLOAD", "DownloadFile", new { _fileName = img.FileName }, new { style = "text-decoration:none; color:azure" })
+
+            </button>
+            <button class="btn btn-danger">
+                @Html.ActionLink("DELETE", "DeleteFile", new { _fileName = img.FileName }, new { style = "text-decoration:none; color:azure" })
+            </button>
+        </td>
+    </tr>
+}
+
+</table>

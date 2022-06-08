@@ -1,0 +1,62 @@
+﻿@model IEnumerable<u19205547_HW03.Models.FileModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <style type="text/css">
+        .auto-style {
+            color: #FFFFFF;
+        }
+
+        .heading {
+            text-align: center;
+            vertical-align: middle;
+        }
+        table {
+            text-transform: uppercase;
+        }
+        thead {
+            position: sticky;
+            top: 0
+        }
+        
+    </style>
+</head>
+
+<h2>Documents of any file type</h2>
+<h4>........... "Media/Documents/" folder</h4>
+
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr bgcolor="#353C51" class="auto-style">
+
+            <th class="col-lg-8">File Name</th>
+            <th class="heading, col-lg-2">Download</th>
+            <th class="heading, col-lg-2">Delete</th>
+
+        </tr>
+    </thead>
+
+
+    @foreach (var doc in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => doc.FileName)
+            </td>
+            <td>
+                <button class="btn btn-success">
+                     @Html.ActionLink("DOWNLOAD", "DownloadFile", new { _fileName = doc.FileName }, new { style = "text-decoration:none; color:azure" })
+                    
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger">
+                    @Html.ActionLink("DELETE", "DeleteFile", new {_fileName = doc.FileName }, new { style = "text-decoration:none; color:azure" })
+                </button>
+            </td>
+        </tr>
+    }
+
+</table>
