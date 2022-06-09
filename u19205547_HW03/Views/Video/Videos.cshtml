@@ -5,20 +5,22 @@
 }
 
 <h2>Videos</h2>
-<h4></h4>
+<h4>........... "Media/Videos/" folder</h4>
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FileName)
-        </th>
-        <th></th>
-    </tr>
 
 @foreach (var vid in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => vid.FileName)
+            <br/>
+            <button class="btn btn-success">
+                @Html.ActionLink("DOWNLOAD", "DownloadFile", new { _fileName = vid.FileName }, new { style = "text-decoration:none; color:azure" })
+
+            </button>
+            <button class="btn btn-danger">
+                @Html.ActionLink("DELETE", "DeleteFile", new { _fileName = vid.FileName }, new { style = "text-decoration:none; color:azure" })
+            </button>
         </td>
     </tr>
 }

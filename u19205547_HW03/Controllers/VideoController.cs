@@ -43,8 +43,6 @@ namespace u19205547_HW03.Controllers
             //create path
             string path = Server.MapPath("~/App_Data/Media/Videos/") + _fileName;
 
-            //open and read byte array ??
-            //byte[] bytesArr = System.IO.File.ReadAllBytes(path);
 
             //delete file
             System.IO.File.Delete(path);

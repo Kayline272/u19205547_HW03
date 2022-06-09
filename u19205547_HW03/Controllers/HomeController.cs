@@ -52,10 +52,7 @@ namespace u19205547_HW03.Controllers
            
             //redirect to get action = back to view
             return RedirectToAction("Index");
-        }
-
-      
-            
+        }      
         public ActionResult About()
         {
             return View();

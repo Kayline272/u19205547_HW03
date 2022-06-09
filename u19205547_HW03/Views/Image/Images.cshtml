@@ -5,21 +5,17 @@
 }
 
 <h2>Images</h2>
-
+<h4>........... "Media/Images/" folder</h4>
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FileName)
-        </th>
-        <th></th>
-    </tr>
-
+  
 @foreach (var img in Model) {
     <tr>
         <td>
-           <img src="~/App_Data/Media/Images/"/>
+            <img src="~/App_Data/Media/Images/" />
+            <br />
             @Html.DisplayFor(modelItem => img.FileName)
+            <br/>
             <button class="btn btn-success">
                 @Html.ActionLink("DOWNLOAD", "DownloadFile", new { _fileName = img.FileName }, new { style = "text-decoration:none; color:azure" })
 
