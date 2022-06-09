@@ -23,20 +23,13 @@ namespace u19205547_HW03.Controllers
 
             foreach (string image in ImgPath)
             {
+                
                 myImages.Add(new FileModel { FileName = Path.GetFileName(image) });
             }
-
-           // ViewBag.ImgPath = ImgPath;
 
             //return list to view
             return View(myImages);
         }
-
-        //public ActionResult TestImg()
-        //{
-
-        //    return View();
-        //}
 
         //file result = sends binary file content
         public FileResult DownloadFile(string _fileName)//receive the file name(destination)

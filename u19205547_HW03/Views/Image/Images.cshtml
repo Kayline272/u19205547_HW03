@@ -12,10 +12,11 @@
 @foreach (var img in Model) {
     <tr>
         <td>
+            
             <img src="~/App_Data/Media/Images/" />
             <br />
             @Html.DisplayFor(modelItem => img.FileName)
-            <br/>
+            <br />
             <button class="btn btn-success">
                 @Html.ActionLink("DOWNLOAD", "DownloadFile", new { _fileName = img.FileName }, new { style = "text-decoration:none; color:azure" })
 
